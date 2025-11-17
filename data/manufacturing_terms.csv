@@ -57,3 +57,5 @@ JIT,생산성,"필요한 시점에 필요한 만큼 생산하는 Just-In-Time �
 Kanban,생산성,"시각적 생산·재고 관리 방식.","Lean;JIT","제조혁신","Kanban 칸반 보드"
 AGV,스마트 물류,"자동 유도차로 물류를 이송하는 장치.","AMR","물류자동화","AGV Automated Guided Vehicle"
 AMR,스마트 물류,"센서 기반 자율주행 로봇으로 유연한 물류 자동화 제공.","AGV","스마트물류","AMR Autonomous Mobile Robot"
+8대 공정,반도체 공정,"반도체 제조공정은 PR Coating, 노광(Lithography), 식각(Etching), 증착(CVD/ALD), CMP, 세정(Cleaning), 검사(Inspection), 패키징(Post-Process) 등으로 구성된다.","Lithography;Etching;CVD;CMP","반도체 공정요약","반도체 8대공정 PR 노광 식각 증착 CMP 검사 세정 패키징"
+
