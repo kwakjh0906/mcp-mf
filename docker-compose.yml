@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+
+  rag:
+    image: jaehy/mcp-mf-rag:latest
+    container_name: mf-rag
+    ports:
+      - "8000:8000"
+    environment:
+      OLLAMA_URL: http://ollama:11434
+    volumes:
+      - ./vector_db:/app/vector_db
+      - ./data:/app/data
+    depends_on:
+      - ollama
+
+  supervisor:
+    image: jaehy/mcp-mf-supervisor:latest
+    container_name: mf-supervisor
+    environment:
+      RAG_URL: http://rag:8000
+      OLLAMA_URL: http://ollama:11434
+    depends_on:
+      - rag
+      - ollama
+    stdin_open: true
+    tty: true
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: mf-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama/models
+
+volumes:
+  ollama_models:

@@ -1,0 +1,12 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# 프로젝트 전체 복사
+COPY . .
+
+# 패키지 설치
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Supervisor 챗봇 실행 (main.py)
+CMD ["python", "main.py"]
